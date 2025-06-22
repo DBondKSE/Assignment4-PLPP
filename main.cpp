@@ -92,7 +92,6 @@ public:
     void load();
     void print();
     void insert(int r, int s);
-    void search();
     void _delete(int r, int s, int c);
     void undo();
     void redo();
@@ -100,8 +99,6 @@ public:
     void paste(int r, int s);
     void copy(int r, int s, int c);
     void insert_r(int r, int s);
-    void encrypt_all();
-    void decrypt_all();
     static std::string readInput();
 private:
     int memory_allocated = 1;
