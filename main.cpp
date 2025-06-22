@@ -554,11 +554,3 @@ void TextEditor::insert_r(int r, int s) {
     }
 }
 
-void TextEditor::encrypt_all() {
-
-}
-
-void TextEditor::decrypt_all() {
-
-}
-
