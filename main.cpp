@@ -165,8 +165,6 @@ int main() {
                 break;
             }
             case 7: {
-                printf("Enter text to search: ");
-                text.search();
                 break;
             }
             case 8: {
@@ -235,8 +233,7 @@ int main() {
                 printf("[4] - load\n");
                 printf("[5] - print\n");
                 printf("[6] - insert\n");
-                printf("[7] - search\n");
-                // New commands
+                printf("[7] - nothing\n");
                 printf("[8] - delete\n");
                 printf("[9] - undo\n");
                 printf("[10] - redo\n");
@@ -384,43 +381,8 @@ void TextEditor::load() {
     }
 
     file.close();
-    // int row_counter = 0;
-    // int temp; while ((temp = getchar()) != '\n' && temp != EOF) {}
-    // FILE *file = fopen(readInput(), "r");
-    // if (file == nullptr)
-    // {
-    //     printf("Error opening file");
-    //     return;
-    // }
-    //
-    // free(text);
-    // text = nullptr;
-    // int alloc = sizeof(char*);
-    // text = (char**)malloc(alloc);
-    //
-    // int size = 10;
-    // int count = 0;
-    // char* buf = (char*)malloc(size);
-    // char ch;
-    // while ((ch = (char)fgetc(file)) != EOF) {
-    //     if (count >= size)
-    //         buf = (char*)realloc(buf, size*=2);
-    //     if (ch == '\n') {
-    //         *(buf + count) = '\0';
-    //         row = row_counter;
-    //         symbol = count;
-    //         *(text + row_counter++) = buf;
-    //         buf = (char*)malloc(size = 10);
-    //         count = 0;
-    //         text = (char**)realloc(text, alloc+=sizeof(char*));
-    //     } else {
-    //         *(buf + count++) = ch;
-    //     }
-    // }
-    // fclose(file);
-    // printf("Text has been loaded successfully\n");
-    // undoStack.clear();
-    // redoStack.clear();
+    undoStack.clear();
+    redoStack.clear();
 }
 
 void TextEditor::insert(int r, int s) {
@@ -437,25 +399,6 @@ void TextEditor::print() {
     for (int i = 0; i < lines.size(); i++)
         lines[i]->print();
 }
-
-void TextEditor::search() {
-    // int temp; while ((temp = getchar()) != '\n' && temp != EOF) {}
-    // char* prompt = readInput();
-    // if (strlen(prompt) == 0)
-    //     return;
-    // int length = 0; while (*(prompt + length) != '\0') length++;
-    // for (int i = 0; i <= row; i++) {
-    //     char* whole = *(text + i);
-    //     char* found;
-    //
-    //     while ((found = strstr(whole, prompt)) != nullptr) {
-    //         while (whole < found) putchar(*whole++);
-    //         printf("[>%.*s<]", length, found);
-    //         whole = found + length;
-    //     }
-    //     printf("%s\n", whole);
-    // }
- }
 
 std::string TextEditor::readInput() {
     std::string buffer;
